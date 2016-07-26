@@ -195,6 +195,12 @@ public class ViagemActivity extends Activity {
         startActivity(new Intent(this, DashboardActivity.class));
     }
 
+    private void removerViagem (String id){
+        SQLiteDatabase db = helper.getWritableDatabase();
+        String where [] = new String[]{id};
+        //db.delete("GASTO", "VIAGEM_ID = ?", where);
+        db.delete("VIAGEM", "ID = ?", where);
+    }
 
 
     public void selecionarOpcao(View v) {
